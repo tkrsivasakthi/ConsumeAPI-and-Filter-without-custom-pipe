@@ -1,13 +1,25 @@
 <div>
-  <input type="text" [(ngModel)]="login" (input)="getName()"> {{login}}
+  <input type="text" [(ngModel)]="login" (input)="getName()" /> {{ login }}
 </div>
+
+<select name="login" id="login">
+  <option *ngFor="let opt of response">
+    {{ opt.login }}
+  </option>
+</select>
+
 <div>
   <ul *ngFor="let user of response">
-    <li><button type="button"  (click)="getUser(user)">{{user.login}}</button></li>
+    <li>
+      <button type="button" (click)="getUser(user)">{{ user.login }}</button>
+    </li>
   </ul>
 </div>
 <div>
-   <p>Image:<img src="{{avatar_url}}" alt="image"  width="200" height="166" ></p><br>
-  <p>Name:{{login}}</p><br>
-  
+  <p>
+    Image:<img src="{{ avatar_url }}" alt="image" width="200" height="166" />
+  </p>
+  <br />
+  <p>Name:{{ login }}</p>
+  <br />
 </div>
